@@ -57,3 +57,39 @@ document.addEventListener('DOMContentLoaded', () =>{
     urls.forEach(u => grid.appendChild(buildConsentTile(u)));
   }
 });
+
+
+// === Micro-interactions pack (iOS-ish) ===
+
+// Ripple on buttons
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.button');
+  if(!btn) return;
+  const r = document.createElement('span');
+  r.className = 'ripple';
+  const rect = btn.getBoundingClientRect();
+  r.style.left = (e.clientX - rect.left) + 'px';
+  r.style.top  = (e.clientY - rect.top) + 'px';
+  btn.appendChild(r);
+  setTimeout(()=>r.remove(), 650);
+});
+
+// Parallax blobs (subtle)
+const blobs = document.createElement('div');
+blobs.className = 'blobs';
+blobs.innerHTML = '<i class="blob"></i><i class="blob b2"></i>';
+document.body.appendChild(blobs);
+
+// Cursor-based inertia
+let tx=0, ty=0, cx=0, cy=0;
+window.addEventListener('mousemove', (e)=>{
+  tx = (e.clientX / window.innerWidth  - .5) * 20;
+  ty = (e.clientY / window.innerHeight - .5) * 20;
+});
+function animate(){
+  cx += (tx - cx) * 0.06;
+  cy += (ty - cy) * 0.06;
+  blobs.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+  requestAnimationFrame(animate);
+}
+animate();
