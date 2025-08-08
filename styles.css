@@ -137,3 +137,68 @@ footer { padding:28px 0; color:#6b7280; font-size:.92rem; text-align:center; bor
   background: radial-gradient(circle at 30% 30%, var(--accent) 0%, rgba(255,255,255,.6) 55%, transparent 70%);
 }
 .blob.b2 { background: radial-gradient(circle at 70% 40%, var(--magenta) 0%, rgba(255,255,255,.6) 55%, transparent 70%); opacity:.18; }
+
+
+/* === Full glass front + textured background + zoom-on-hover === */
+
+/* Subtle paper-like texture behind everything */
+body::after{
+  content:"";
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(1200px 800px at 80% 10%, rgba(0,0,0,.04), transparent 60%),
+    radial-gradient(800px 1000px at 10% 90%, rgba(0,0,0,.03), transparent 65%),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 2px, rgba(255,255,255,.012) 2px 4px);
+  mix-blend-mode:multiply;
+}
+
+/* Make common front elements glass by default */
+.panel, .card, .methods a, .profile-wrap, .brand, header.site-header, footer .container{
+  background: rgba(255,255,255,.6);
+  border:1px solid var(--line);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Panels layout */
+.panel{ padding:22px; }
+.hero .copy.panel{ padding:26px 26px; }
+
+/* Hover zoom on front elements */
+.panel, .card, .methods a, .button, .profile-wrap{
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+}
+.panel:hover, .card:hover, .methods a:hover, .button:hover, .profile-wrap:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 44px rgba(17,24,39,.12), 0 3px 14px rgba(17,24,39,.06);
+}
+
+/* Ensure header logo group doesn't over-zoom */
+header .brand:hover{ transform:none; box-shadow: var(--shadow); }
+
+/* Section spacing tweaks for panels */
+.section .container > .panel + .panel{ margin-top:14px }
+
+
+/* Fixed CTA */
+.cta-fixed{
+  position: fixed; right: 16px; bottom: 16px; z-index: 60;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: white; text-decoration:none; font-weight:800;
+  padding: 14px 18px; border-radius: 999px; box-shadow: var(--shadow); border:none;
+  display:flex; align-items:center; gap:.6rem;
+}
+@media (min-width: 960px){
+  .cta-fixed{ bottom: 24px; right: 24px; }
+}
+
+
+/* Testimonials carousel */
+.testi-track{ display:grid; grid-auto-flow:column; grid-auto-columns: min(100%, 320px); gap:14px; overflow:auto; scroll-snap-type:x mandatory; padding-bottom:6px }
+.testi{ padding:18px; border-radius:var(--radius); scroll-snap-align:start }
+.testi blockquote{ margin:0 0 8px 0; color:#374151 }
+.testi::-webkit-scrollbar{ height:8px }
+.testi-track::-webkit-scrollbar-thumb{ background:rgba(0,0,0,.12); border-radius:999px }

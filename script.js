@@ -93,3 +93,21 @@ function animate(){
   requestAnimationFrame(animate);
 }
 animate();
+
+
+// === Scroll parallax for panels ===
+const parallaxEls = [];
+document.querySelectorAll('.panel, .profile-wrap').forEach((el, i) => {
+  el.dataset.parallax = (i % 2 === 0) ? '0.06' : '0.1'; // alternate strength
+  parallaxEls.push(el);
+});
+
+function onScrollParallax(){
+  const y = window.scrollY || 0;
+  parallaxEls.forEach(el => {
+    const s = parseFloat(el.dataset.parallax || '0.08');
+    el.style.transform = `translateY(${y * s * -1}px)`;
+  });
+  requestAnimationFrame(onScrollParallax);
+}
+onScrollParallax();

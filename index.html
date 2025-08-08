@@ -2,26 +2,38 @@
 <!doctype html>
 <html lang="de">
 <head>
+  <meta property="og:title" content="STRACKVISUALS – Visual Content für Unternehmen">
+  <meta property="og:description" content="Foto & Video für Social. Unkompliziert, schnell, wirkungsstark.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/profile.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.beispiel-domain.de/">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>STRACKVISUALS — Thomas Strack | Visual Content Creator</title>
   <meta name="description" content="Thomas Strack — Foto & Video für Unternehmen. Kreativer, trendbewusster Social-Content: unkompliziert, schnell, wirkungsstark." />
   <link rel="icon" href="assets/logo-white.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optional: Plausible Analytics (datenschutzfreundlich)
+  <script defer data-domain="DEINE-DOMAIN.de" src="https://plausible.io/js/script.js"></script>
+  -->
+
 </head>
 <body>
   <!-- micro-interactions enabled -->
 
   <header class="site-header">
     <div class="container brand">
-      <img src="assets/logo-grey.png" alt="STRACKVISUALS Logo">
+      <img loading="lazy" src="assets/logo-grey.png" alt="STRACKVISUALS Logo">
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <div class="copy">
+        <div class="copy panel">
           <div class="eyebrow">Foto • Video • Social</div>
           <h1>Futuristisch, clean – <br>bereit für Tempo.</h1>
           <p class="lead">
@@ -36,7 +48,7 @@
         </div>
         <div class="visual">
           <div class="profile-wrap glass">
-            <img class="profile" src="assets/profile.png" alt="Portrait: Thomas Strack">
+            <img loading="lazy" class="profile" src="assets/profile.png" alt="Portrait: Thomas Strack">
           </div>
         </div>
       </div>
@@ -44,7 +56,8 @@
 
     <section class="section">
       <div class="container">
-        <div class="eyebrow">Leistungen</div>
+        <div class="panel">
+          <div class="eyebrow">Leistungen</div>
         <h2>Schlanke Produktion für Social</h2>
         <div class="cards">
           <article class="card glass">
@@ -65,18 +78,83 @@
 
     <section id="portfolio" class="section">
       <div class="container">
-        <div class="eyebrow">Arbeiten</div>
+        <div class="panel">
+          <div class="eyebrow">Arbeiten</div>
         <h2>Ausgewählte Posts</h2>
         <p class="lead">Zur Wahrung Ihrer Privatsphäre laden Instagram‑Inhalte erst nach Ihrer Zustimmung.</p>
+        </div>
         <div class="portfolio-grid">
           <!-- Consent tiles / or embeds will be injected here by script.js -->
         </div>
       </div>
     </section>
 
+    <section class="section">
+      <div class="container panel">
+        <div class="eyebrow">Vertrauen</div>
+        <h2>Ausgewählte Marken</h2>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:center;justify-items:center;margin-top:12px">
+          <div class="glass" style="height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;width:100%">Logo 1</div>
+          <div class="glass" style="height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;width:100%">Logo 2</div>
+          <div class="glass" style="height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;width:100%">Logo 3</div>
+          <div class="glass" style="height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;width:100%">Logo 4</div>
+          <div class="glass" style="height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;width:100%">Logo 5</div>
+          <div class="glass" style="height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;width:100%">Logo 6</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container panel">
+        <div class="eyebrow">Stimmen</div>
+        <h2>Was Kunden sagen</h2>
+        <div class="testi-track" aria-live="polite">
+          <figure class="glass testi">
+            <blockquote>„Thomas hat unseren Social‑Output in wenigen Wochen auf ein neues Level gebracht.“</blockquote>
+            <figcaption>— Max Muster, Beispiel GmbH</figcaption>
+          </figure>
+          <figure class="glass testi">
+            <blockquote>„Schnell, unkompliziert, kreativ. Genau das, was wir gebraucht haben.“</blockquote>
+            <figcaption>— Anna Beispiel, Startup AG</figcaption>
+          </figure>
+          <figure class="glass testi">
+            <blockquote>„Starke Bilder, klare Stories – super Performance in den Ads.“</blockquote>
+            <figcaption>— Lea Kunde, Brand XYZ</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container panel">
+        <div class="eyebrow">Pakete</div>
+        <h2>Richtwerte & Pakete (ab)</h2>
+        <div class="cards">
+          <article class="card glass">
+            <h3>Social‑Sprint</h3>
+            <p>1 Drehtag · 6–10 Reels/Shorts · Thumbnails · Musik/SFX</p>
+            <p><strong>ab 1.200 €</strong></p>
+          </article>
+          <article class="card glass">
+            <h3>Brand‑Shoot</h3>
+            <p>1/2 Tag Foto · Produkt & Lifestyle · 30–50 Bilder bearbeitet</p>
+            <p><strong>ab 900 €</strong></p>
+          </article>
+          <article class="card glass">
+            <h3>Content‑Monat</h3>
+            <p>2 Drehtage · Mix aus Reels/Foto · Redaktionsplan · Snippets</p>
+            <p><strong>ab 2.900 €</strong></p>
+          </article>
+        </div>
+        <p class="lead" style="margin-top:10px">Finale Angebote nach Gespräch & Scope. Preise zzgl. USt.</p>
+      </div>
+    </section>
+
     <section id="kontakt" class="section">
       <div class="container contact">
-        <div>
+        <div class="panel">
           <div class="eyebrow">Kontakt</div>
           <h2>Lassen Sie uns loslegen</h2>
           <p class="lead">Mail, WhatsApp oder Instagram – was für Sie am einfachsten ist.</p>
@@ -103,5 +181,7 @@
 
   <script src="script.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+
+  <a class="cta-fixed" href="#kontakt" aria-label="Projekt anfragen">🚀 Projekt anfragen</a>
 </body>
 </html>
