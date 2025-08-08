@@ -44,9 +44,9 @@ function loadInstagram(urls){
 
 document.addEventListener('DOMContentLoaded', () =>{
   const urls = [
-    "https://www.instagram.com/p/POST_1_URL/",
-    "https://www.instagram.com/p/POST_2_URL/",
-    "https://www.instagram.com/p/POST_3_URL/"
+    "https://www.instagram.com/p/DM2rkQho2En/",
+    "https://www.instagram.com/p/DM5d0YZIsXf/",
+    "https://www.instagram.com/p/DMvEE89Irov/"
   ];
 
   const grid = document.querySelector('.portfolio-grid');
