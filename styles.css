@@ -89,12 +89,7 @@ header.site-header{
   box-shadow: 0 20px 60px -20px rgba(0,0,0,.6), 0 0 0 8px rgba(255,255,255,.05);
 }
 
-.ticker{ margin-top:28px; overflow:hidden; border-block:1px solid rgba(255,255,255,.1);
-  background: linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,0)); }
-.ticker__track{ display:flex; gap:1.6rem; padding:10px 0; animation: ticker 24s linear infinite;
-  white-space:nowrap; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
-  color: #5B9EBF; }
-@keyframes ticker{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+ to{ transform: translateX(-50%); } }
 
 /* sections */
 .section{ padding:70px 0 }
@@ -141,3 +136,40 @@ footer{ padding:28px 0; color:#d3d7df; font-size:.9rem; text-align:center; borde
 /* reveal utility */
 .reveal{ opacity:0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease }
 .reveal.is-visible{ opacity:1; transform:none }
+
+
+/* === Extra Motion Pass === */
+
+/* subtle float for profile image */
+@keyframes floatY { from { transform: translateY(0); } 50% { transform: translateY(-8px); } to { transform: translateY(0); } }
+.profile{ animation: floatY 6s ease-in-out infinite; }
+
+/* interactive shine on buttons */
+.button{ position:relative; overflow:hidden; }
+.button::after{
+  content:""; position:absolute; inset:-1px; transform: translateX(-120%);
+  background: linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.25) 45%, rgba(255,255,255,0) 60%);
+  filter: blur(2px);
+}
+.button:hover::after{ animation: sweep 0.9s ease; }
+@keyframes sweep{ to { transform: translateX(120%); } }
+
+/* card hover tilt */
+.cards{ perspective: 900px; }
+.card{ transform: rotateX(0) rotateY(0) translateZ(0); transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform: rotateX(4deg) rotateY(-3deg) translateZ(8px); box-shadow: 0 16px 40px -18px rgba(0,0,0,.6); }
+
+/* animated border glow on focus */
+.card:focus-within, .methods a:focus-visible, .button:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 65%, white 0%);
+  transition: box-shadow .2s ease;
+}
+
+/* speed-lines strength pulse */
+@keyframes linesPulse { 0%,100%{ opacity:.95 } 50%{ opacity:.75 } }
+.speed-lines{ animation: slideLines 18s linear infinite, linesPulse 6s ease-in-out infinite; }
+
+/* tiny spark dots layer */
+.spark-layer{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+.spark{ position:absolute; width:2px; height:2px; border-radius:50%; background: color-mix(in oklab, var(--accent) 80%, white 10%); opacity:.8; }
