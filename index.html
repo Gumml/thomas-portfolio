@@ -1,102 +1,138 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Thomas Strack – Visual Content Creator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: #ffffff;
-        }
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #222;
-        }
-        h1 {
-            margin: 20px 0 10px;
-            font-size: 28px;
-        }
-        p.subtitle {
-            color: #555;
-            font-size: 18px;
-        }
-        section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-        .portfolio a {
-            display: inline-block;
-            margin: 10px;
-            text-decoration: none;
-            color: #0077cc;
-        }
-        .contact a {
-            display: block;
-            margin-bottom: 10px;
-            text-decoration: none;
-            color: #0077cc;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STRACKVISUALS — Thomas Strack | Visual Content Creator</title>
+  <meta name="description" content="Thomas Strack — Visual content creator producing photo & video for businesses. Creative, trend‑savvy social media content that moves fast and stays on brand." />
+  <link rel="preload" href="assets/profile.png" as="image">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Optional: load your custom brand font when you have it. Replace filenames and font-family below.
+    @font-face{
+      font-family:'BrandDisplay';
+      src:url('assets/YourFont-Variable.woff2') format('woff2');
+      font-weight:100 900;
+      font-style:normal;
+      font-display:swap;
+    }
+    body{ font-family: BrandDisplay, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; }
+    */
+  </style>
 </head>
 <body>
+  <div class="grid"></div>
+  <div class="speed-lines"></div>
 
-<header>
-    <img src="thomas-strack-circular.png" alt="Thomas Strack" class="profile-pic" />
-    <h1>Thomas Strack</h1>
-    <p class="subtitle">Visual Content Creator – Photo & Video for Businesses</p>
-</header>
-
-<section>
-    <h2>About Me</h2>
-    <p>Hey! I'm Thomas, a visual content creator with around 10 years of experience. What started as a hobby has grown into a full-time passion — helping businesses stand out with creative photo and video content. I'm straightforward, love experimenting with social media trends, and always aim to create visually engaging stories. Let's create something together!</p>
-</section>
-
-<section>
-    <h2>Portfolio</h2>
-    <p>Check out some of my work on Instagram:</p>
-    <div class="portfolio">
-        <a href="https://www.instagram.com/strackvisuals" target="_blank">@strackvisuals</a>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Strack Visuals logo">
+        <span>STRACKVISUALS</span>
+      </div>
+      <nav class="actions">
+        <a class="button" href="#contact">Work with me</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section>
-    <h2>Contact</h2>
-    <div class="contact">
-        <a href="mailto:info@strackvisuals.de">📧 info@strackvisuals.de</a>
-        <a href="https://wa.me/your-number" target="_blank">💬 WhatsApp</a>
-        <a href="https://www.instagram.com/strackvisuals" target="_blank">📸 Instagram</a>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="copy reveal">
+        <div class="kicker">Visual content for fast brands</div>
+        <h1>Futuristic, clean <br/>and built for speed.</h1>
+        <p class="lead">I'm <strong>Thomas Strack</strong> — a visual content creator with ~10 years of hands‑on experience crafting photos and video for businesses. I keep it uncomplicated, trend‑aware and execution‑focused.</p>
+        <div class="hero-actions">
+          <a class="button" href="#portfolio">See work</a>
+          <a class="button" href="#contact">Start a project</a>
+        </div>
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker__track">
+            <span>Marathon Trailer • Creative Social Content • Photo • Video • </span>
+            <span>Business‑ready • Fast Turnaround • Straightforward Workflow • </span>
+            <span>Marathon Trailer • Creative Social Content • Photo • Video • </span>
+            <span>Business‑ready • Fast Turnaround • Straightforward Workflow • </span>
+          </div>
+        </div>
+      </div>
+      <div class="visual reveal" style="justify-self:center;">
+        <img class="profile" src="assets/profile.png" alt="Portrait of Thomas Strack" width="240" height="240"/>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
-    © 2025 Thomas Strack – All rights reserved.
-</footer>
+  <section id="services" class="section">
+    <div class="container reveal">
+      <div class="eyebrow">What I do</div>
+      <h2>Lean, trend‑savvy production for social</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Short‑form video</h3>
+          <p>Concept, shoot and edit for Reels/TikTok/Shorts. Pace that grabs attention, motion graphics and on‑trend cuts.</p>
+        </article>
+        <article class="card">
+          <h3>Brand photography</h3>
+          <p>Clean product and lifestyle sets that translate to ads, web and social without slowing your team down.</p>
+        </article>
+        <article class="card">
+          <h3>Content systems</h3>
+          <p>Batch capture + modular edit flows to keep you posting. Simple, straightforward delivery and feedback.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <section id="portfolio" class="section">
+    <div class="container reveal">
+      <div class="eyebrow">Work</div>
+      <h2>Selected posts</h2>
+      <p class="muted">Drop your Instagram post links into the placeholders below. They will auto‑embed.</p>
+      <div class="portfolio-grid">
+
+        <!-- ===== Replace data-instgrm-permalink with your post URLs ===== -->
+        <blockquote class="instagram-media embed" data-instgrm-permalink="https://www.instagram.com/p/POST_1_URL/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media embed" data-instgrm-permalink="https://www.instagram.com/p/POST_2_URL/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media embed" data-instgrm-permalink="https://www.instagram.com/p/POST_3_URL/" data-instgrm-version="14"></blockquote>
+
+      </div>
+      <div style="margin-top:14px;">
+        <a class="button" href="https://www.instagram.com/strackvisuals" target="_blank" rel="noopener">More on @strackvisuals</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container reveal">
+      <div class="eyebrow">About</div>
+      <h2>Uncomplicated. Straightforward. Creative.</h2>
+      <p>Started a decade ago as a hobby; still pushing new ideas every week. I test trends, keep it practical for businesses and deliver assets you can use tomorrow. No drama—just clean visuals that move.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container contact reveal">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Let’s build something with speed</h2>
+        <p class="muted">Email, WhatsApp or Instagram DM—whatever is easiest.</p>
+        <div class="methods">
+          <a href="mailto:info@strackvisuals.de">📧 info@strackvisuals.de</a>
+          <a href="https://wa.me/your-number" target="_blank" rel="noopener">💬 WhatsApp (replace with your number)</a>
+          <a href="https://www.instagram.com/strackvisuals" target="_blank" rel="noopener">📸 @strackvisuals</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Project fit checklist</h3>
+        <p>• Short‑form or stills for social<br/>• Clear brand vibe + fast iteration<br/>• Room to try bold ideas</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>© <span id="year"></span> Thomas Strack — STRACKVISUALS</footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
 </html>

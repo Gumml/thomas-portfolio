@@ -1,0 +1,103 @@
+
+:root{
+  --bg:#0b0d10;
+  --bg-2:#0f1217;
+  --text:#e6e9ee;
+  --muted:#a7afbf;
+  --accent:#00D1FF;
+  --accent-2:#FF2D72;
+  --grid:#1a212d;
+  --card:#0f141b;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  line-height:1.6;overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:-20vmax; z-index:-3;
+  background: radial-gradient(60vmax 60vmax at 15% 20%, color-mix(in oklab, var(--accent) 35%, transparent), transparent 60%),
+              radial-gradient(60vmax 60vmax at 85% 80%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 65%);
+  filter: blur(40px) saturate(120%);
+  animation: drift 25s ease-in-out infinite alternate;
+}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1);}100%{transform:translate3d(-3vmax,2vmax,0) scale(1.05);}}
+.grid{
+  position: fixed; inset:0; z-index:-2; pointer-events:none; opacity:.35;
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(80vmax 80vmax at 70% 20%, black 30%, transparent 75%);
+}
+.speed-lines{
+  position: fixed; inset:0; z-index:-1; pointer-events:none;
+  background: repeating-linear-gradient(120deg, transparent 0 28px, rgba(255,255,255,.04) 28px 30px);
+  mix-blend-mode: overlay;
+  animation: slideLines 18s linear infinite;
+}
+@keyframes slideLines{0%{background-position:0 0;}100%{background-position:2000px 0;}}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.button{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.9rem 1.2rem;border-radius:999px;
+  border:1px solid color-mix(in oklab,var(--accent) 60%, white 0%);
+  background:linear-gradient(180deg, color-mix(in oklab,var(--accent) 15%, black 85%), color-mix(in oklab,var(--accent) 5%, black 95%));
+  color:var(--text); text-decoration:none; font-weight:600; letter-spacing:.3px;
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+.button:hover{ transform: translateY(-2px); box-shadow:0 10px 30px -10px color-mix(in oklab,var(--accent) 40%, transparent); }
+
+header.site-header{
+  position:sticky; top:0; z-index:30;
+  background: rgba(11,13,16,.6);
+  backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.6px}
+.brand img{height:32px;width:auto;filter: drop-shadow(0 0 6px rgba(0,0,0,.4));}
+.brand span{opacity:.85}
+
+.hero{padding:80px 0 40px;}
+.hero-inner{display:grid;grid-template-columns:1.2fr .9fr;gap:40px;align-items:center}
+@media (max-width:900px){ .hero-inner{grid-template-columns:1fr; gap:32px;} }
+.kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.18em; font-size:.78rem}
+.hero h1{font-size: clamp(2rem, 6vw, 4rem); line-height:1.05; margin:.4rem 0 1rem; letter-spacing:.02em;}
+.hero .lead{font-size: clamp(1rem, 1.5vw, 1.25rem); color:var(--muted)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+.profile{justify-self:center;width: 240px; height:240px; border-radius:50%; border:3px solid color-mix(in oklab,var(--accent) 70%, white 0%); box-shadow: 0 20px 60px -20px rgba(0,0,0,.6), 0 0 0 8px rgba(255,255,255,.03);}
+
+.ticker{margin-top:28px; overflow:hidden; border-block:1px solid rgba(255,255,255,.08); background: linear-gradient(90deg, rgba(255,255,255,.03), rgba(255,255,255,0));}
+.ticker__track{display:flex; gap:1.6rem; padding:10px 0; animation: ticker 22s linear infinite; white-space:nowrap; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color: color-mix(in oklab, var(--accent) 85%, white 8%);}
+@keyframes ticker{from{ transform: translateX(0);} to{ transform: translateX(-50%);}}
+
+.section{padding:70px 0}
+.section h2{font-size: clamp(1.4rem, 3vw, 2rem); margin:0 0 10px;}
+.section .eyebrow{color:var(--muted); text-transform:uppercase; letter-spacing:.18em; font-size:.8rem;}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+@media (max-width:900px){ .cards{grid-template-columns:1fr; } }
+.card{background: linear-gradient(180deg, var(--card), rgba(8,10,13,.6)); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:20px; position:relative; overflow:hidden;}
+.card::after{content:""; position:absolute; inset:-1px; border-radius:18px; background: linear-gradient(120deg, color-mix(in oklab,var(--accent) 20%, transparent), transparent 40%, color-mix(in oklab,var(--accent-2) 18%, transparent)); opacity:.35; filter: blur(18px); z-index:-1;}
+.card h3{margin:0 0 6px; font-size:1.1rem}
+.card p{color:var(--muted); margin:0}
+
+.portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px; }
+@media (max-width:1000px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .portfolio-grid{grid-template-columns:1fr;} }
+.embed{ background:#11161d;border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; min-height: 480px; display:flex;align-items:center;justify-content:center; }
+
+.contact{ display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:start; }
+@media (max-width:900px){ .contact{grid-template-columns:1fr;} }
+.contact .methods a{ display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--text);
+  padding:12px 14px; border:1px solid rgba(255,255,255,.08); border-radius:12px; margin-bottom:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.05));
+}
+
+footer{padding:28px 0; color:var(--muted); font-size:.9rem; text-align:center; border-top:1px solid rgba(255,255,255,.06)}
+.reveal{opacity:0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease}
+.reveal.is-visible{opacity:1; transform:none}
